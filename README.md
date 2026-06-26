@@ -1,7 +1,3 @@
-Here is a **clean, git-ready `README.md`** aligned with your script, design decisions, and engineering style.
-
-***
-
 # File Archiving & Retention Script
 
 ## Overview
@@ -43,7 +39,7 @@ This PowerShell script provides a **safe, deterministic, and automated method** 
 ## Script Location
 
 ```
-C:\GOS\Scripts\files2zip\archive2zip.ps1
+C:\Scripts\archive2zip\archive2zip.ps1
 ```
 
 ***
@@ -79,7 +75,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Dry-run (default)
 
 ```
-.\archive2zip.ps1 -SourcePath D:\Logs
+.\archive2zip.ps1 -SourcePath D:\Logs -ArchiveRoot D:\Logs\Archive
 ```
 
 ***
@@ -87,7 +83,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Archive files
 
 ```
-.\archive2zip.ps1 -SourcePath D:\Logs -Process
+.\archive2zip.ps1 -SourcePath D:\Logs -ArchiveRoot D:\Logs\Archive -Process
 ```
 
 ***
@@ -95,7 +91,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Archive + delete source files
 
 ```
-.\archive2zip.ps1 -SourcePath D:\Logs -Process -DeleteFiles
+.\archive2zip.ps1 -SourcePath D:\Logs -ArchiveRoot D:\Logs\Archive -Process -DeleteFiles
 ```
 
 ***
@@ -103,7 +99,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Archive with detailed logging
 
 ```
-.\archive2zip.ps1 -SourcePath D:\Logs -Process -DetailedLog
+.\archive2zip.ps1 -SourcePath D:\Logs -ArchiveRoot D:\Logs\Archive-Process -DetailedLog
 ```
 
 ***
@@ -111,7 +107,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Archive recursively
 
 ```
-.\archive2zip.ps1 -SourcePath D:\Logs -Recurse -Process
+.\archive2zip.ps1 -SourcePath D:\Logs -ArchiveRoot D:\Logs\Archive -Recurse -Process
 ```
 
 ***
@@ -119,7 +115,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Purge (dry-run)
 
 ```
-.\archive2zip.ps1 -SourcePath D:\ArchiveLogs -Purge -Number 6 -Mode Month
+.\archive2zip.ps1 -SourcePath D:\Logs\Archive -Purge -Number 6 -Mode Month
 ```
 
 ***
@@ -127,7 +123,7 @@ C:\GOS\Scripts\files2zip\archive2zip.ps1
 ### Purge (execute)
 
 ```
-.\archive2zip.ps1 -SourcePath D:\ArchiveLogs -Purge -Number 6 -Mode Month -Process
+.\archive2zip.ps1 -SourcePath D:\Logs\Archive -Purge -Number 6 -Mode Month -Process
 ```
 
 ***
@@ -245,7 +241,7 @@ Program:
   powershell.exe
 
 Arguments:
-  -NoProfile -ExecutionPolicy Bypass -File "C:\GOS\Scripts\files2zip\archive2zip.ps1" -SourcePath "D:\Logs" -DetailedLog -Mode Month -ArchiveRoot "D:\ArchiveLogs" -DeleteFiles -Process
+  -NoProfile -ExecutionPolicy Bypass -File "C:\Scripts\archive2zip\archive2zip.ps1" -SourcePath "D:\Logs" -DetailedLog -Mode Month -ArchiveRoot "D:\Logs\Archive" -DeleteFiles -Process
 ```
 
 ***
